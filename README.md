@@ -15,3 +15,6 @@
 4. Spin up Env: conda activate BayesianExamples
 5. Setup to use vi for cell mangement: python -m pip install jupyterlab-vim
 6. Start notebook: jupyter lab --notebook-dir=$pwd
+
+### BayesianExamples enviroment removal
+1. conda remove --name  BayesianExamples --all
