@@ -1,4 +1,4 @@
-# BaysainReasoningExamples
+# BayesianReasoningExamples
 
 ## Setup
 ### Python Notebook Setup
@@ -10,7 +10,7 @@
 ### Jupyter Lab Setup
 
 1. Create Python Env (pystan require 3.9): conda create -n BayesianExamples python=3.9 numpy scipy sympy pystan jupyterlab
-2. git clone https://github.com/baudekin/BaysianReasoningExamples.git
+2. git clone https://github.com/baudekin/BayesianReasoningExamples.git
 3. cd BayesianExamples
 4. Spin up Env: conda activate BayesianExamples
 5. Setup to use vi for cell mangement: python -m pip install jupyterlab-vim
