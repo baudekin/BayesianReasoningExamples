@@ -46,7 +46,7 @@ Cut and past one of the URLs into you browser. Then you should see Juypter Lab w
 podman exec -i juypterlab /bin/bash
 ```
 
-### Structure
+### Structure of jovyan home directory
 
 ```log
 .
@@ -79,7 +79,6 @@ podman exec -i juypterlab /bin/bash
 └── work
     ├── .ipynb_checkpoints
     │   └── SmokeTest-checkpoint.ipynb
-    ├── SmokeTest.ipynb
-    └── struct.txt
+    └── SmokeTest.ipynb
 
 ```
