@@ -1,20 +1,35 @@
 # BayesianReasoningExamples
 
-## Setup
-### Python Setup
+## Setting up podman
 
-1. curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/miniconda3/miniconda.sh
-2. bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-3. ~/miniconda3/bin/conda init zsh
+```bash
+brew install podman
+podman init
+podman start
+```
 
-### Jupyter Lab Setup
+## Building and Running Jupyter Lab
 
-1. Create Python Env (pystan require 3.9): conda create -n BayesianExamples python=3.9 numpy scipy sympy pystan jupyterlab
-2. git clone https://github.com/baudekin/BayesianReasoningExamples.git
-3. cd BayesianReasoningExamples
-4. Spin up Env: conda activate BayesianExamples
-5. Setup to use vi for cell mangement: python -m pip install jupyterlab-vim
-6. Start notebook: jupyter lab --notebook-dir=$pwd
+To build a image with the name juypterlab run the first command below. To create the container with name juypterlab and run it use the second command below:
 
-### BayesianExamples enviroment removal
-1. conda remove --name  BayesianExamples --all
+```bash
+podman build . --tag juypterlab
+podman  run --mount type=bind,source="$(pwd)"/work,target=/home/jovyan/work  -p 8888:8888 --name juypterlab --rm -it juypterlab
+```
+
+## Jupyter Lab Docker Container
+
+### Source Links
+
+- Documentation: <https://jupyter-docker-stacks.readthedocs.io/en/latest/>
+- Image Sources: <https://quay.io/organization/jupyter>
+- Image the Dockerfile uses is: <https://quay.io/repository/jupyter/scipy-notebook?tab=info>
+- Specific image: quay.io/jupyter/scipy-notebook:python-3.12.8
+
+### Remoting in to explore
+
+```bash
+podman exec -i juypterlab /bin/bash
+```
+
+### Structure
