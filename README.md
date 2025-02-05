@@ -14,7 +14,7 @@ To build a image with the name jupyterlab run the first command below. To create
 
 ```bash
 podman build . --tag jupyterlab
-podman  run --mount type=bind,source="$(pwd)"/work,target=/home/jovyan/work  -p 8888:8888 --name jupyterlab --rm -it jupyterlab
+source StartNotebooks.zsh
 ```
 
 ## Accessing notebooks
