@@ -10,16 +10,16 @@ podman start
 
 ## Building and Running Jupyter Lab
 
-To build a image with the name juypterlab run the first command below. To create the container with name juypterlab and run it use the second command below:
+To build a image with the name jupyterlab run the first command below. To create the container with name jupyterlab and run it use the second command below:
 
 ```bash
-podman build . --tag juypterlab
-podman  run --mount type=bind,source="$(pwd)"/work,target=/home/jovyan/work  -p 8888:8888 --name juypterlab --rm -it juypterlab
+podman build . --tag jupyterlab
+podman  run --mount type=bind,source="$(pwd)"/work,target=/home/jovyan/work  -p 8888:8888 --name jupyterlab --rm -it jupyterlab
 ```
 
 ## Accessing notebooks
 
-Look in the juypterlab container log for the following section:
+Look in the jupyterlab container log for the following section:
 
 ```log
    To access the server, open this file in a browser:
@@ -29,7 +29,7 @@ Look in the juypterlab container log for the following section:
         http://127.0.0.1:8888/lab?token=9d1c86a3db231e4a4dcd677b93e377711ba4f9dd19537f63
 ```
 
-Cut and past one of the URLs into you browser. Then you should see Juypter Lab with a SmokeTest notebook. Make sure the notebook executes without errors.
+Cut and past one of the URLs into you browser. Then you should see jupyter Lab with a SmokeTest notebook. Make sure the notebook executes without errors.
 
 ## Jupyter Lab Docker Container
 
@@ -43,7 +43,7 @@ Cut and past one of the URLs into you browser. Then you should see Juypter Lab w
 ### Remote into the contaner to explore
 
 ```bash
-podman exec -i juypterlab /bin/bash
+podman exec -i jupyterlab /bin/bash
 ```
 
 ### Structure of jovyan home directory
